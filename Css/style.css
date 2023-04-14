@@ -3,75 +3,90 @@
 html {
     box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
-#container{
+/* styling the container  */
+#container {
     width: 60%;
     border: 1px solid black;
     margin: 3em auto;
-    
+
 }
-header{
+
+/* main head of the document  */
+header {
     height: 5em;
     width: 100%;
 }
-header h1{
+
+header h1 {
     margin: 0;
-   font-size: 4em;
-   font-family: sans-serif;
-   letter-spacing: 2px;
-   font-weight: 800;
+    font-size: 4em;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-weight: 800;
 }
-header h1 em{
+
+header h1 em {
     color: rgb(179, 27, 27);
 }
-header p{
+
+header p {
     position: absolute;
-    top:3px;
+    top: 3px;
     font-family: sans-serif;
     font-size: 1.2em;
     letter-spacing: 2px;
 }
+/* applying grid to main instead of whole container includes header which we can easily make using othe method  */
 
-#container > main{
+#container>main {
     display: grid;
-    grid-template-areas: 
-    "c a"
-    "d b";
+    grid-template-areas:
+        "c a"
+        "d b";
     grid-template-columns: 30% 70%;
 }
-
-main > article:nth-child(1){
+/* styling first article tag */
+main>article:nth-child(1) {
     grid-area: a;
     padding: 2em;
 }
 
-main > article:nth-child(1) > h2{
+main>article:nth-child(1)>h2 {
     color: rgb(179, 27, 27);
     font-size: 2.6em;
     font-family: sans-serif;
 }
 
-main > article:nth-child(1) > p{
+main>article:nth-child(1)>p {
     line-height: 1.6em;
 }
 
-main > article:nth-child(2){
+/* styling second article tag  */
+main>article:nth-child(2) {
     grid-area: b;
     padding: 2em;
     margin-top: 10em;
 }
 
-main > article:nth-child(2) > p{
+main>article:nth-child(2)>p {
     line-height: 1.6em;
 }
 
-main > article:nth-child(2) > p > mark{
+main>article:nth-child(2)>p::first-line {
+    font-weight: bold;
+}
+
+main>article:nth-child(2)>p>mark {
     background-color: rgb(243, 220, 220);
 }
 
-main > article:nth-child(2) > h2{
+main>article:nth-child(2)>h2 {
     font-size: 4em;
     letter-spacing: 2px;
     font-family: sans-serif;
@@ -79,7 +94,8 @@ main > article:nth-child(2) > h2{
     margin: 0;
 }
 
-main > aside:nth-child(3){
+/* style for first aside  */
+main>aside:nth-child(3) {
     grid-area: c;
     font-size: 1.3em;
     line-height: 2.3em;
@@ -87,54 +103,67 @@ main > aside:nth-child(3){
     padding: 1.3em;
     margin-top: 5em;
 }
-
-a{
+/* applying the link style to all the link as they are same  */
+a {
     color: black;
     text-decoration: none;
     font-weight: bold;
 }
-main > aside:nth-child(4){
-    grid-area: d;  
+/* style for second aside  */
+main>aside:nth-child(4) {
+    grid-area: d;
     background-color: rgb(228, 211, 211);
-    
-}
-main > aside:nth-child(4) > h2{
-    color: rgb(179, 27, 27);
-    margin-left: 2em;
-    margin-top: 1em;
-    font-family: sans-serif;
+
 }
 
-main > aside:nth-child(4) > p{
-    padding:0 1.5em 0 1.5em;
+main>aside:nth-child(4)>h2 {
+    color: rgb(179, 27, 27);
+    font-family: sans-serif;
+    font-size: 1.6em;
+}
+
+main>aside:nth-child(4)>p {
+    padding: 0 1.5em 0 1.5em;
     line-height: 1.5em;
     margin-bottom: 0;
 }
-main > aside:nth-child(4) > ul {
+
+main>aside:nth-child(4)>ul {
     list-style: none;
 }
 
-main > aside:nth-child(4) > ul > li > h3{
+main>aside:nth-child(4)>ul>li>h3 {
     font-size: 15px;
     margin-top: 0;
 }
-footer > p {
+
+/* footer styling  */
+footer>p {
     font-size: 1.2em;
 }
-footer > p > small > em, abbr{
-font-weight: bolder;
+
+footer>p>small>em {
+    margin-right: 1em;
 }
 
-/* image */
-
-main > article:nth-child(1) > figure > img{
-  width: 620px;
-  height: 500px;
+footer>p>small>em,
+abbr {
+    font-weight: bolder;
 }
 
-main > article:nth-child(1) > figure{
+/* image place holder added to article one to make it easily changeable for future reference */
+
+main>article:nth-child(1)>figure>img {
+    width: 620px;
+    height: 500px;
+}
+
+main>article:nth-child(1)>figure {
     height: 290px;
 }
-
-
-
+/* + sign added for more real feel  */
+main>aside:nth-child(4)>h2>span {
+    color: black;
+    font-size: 4em;
+    font-weight: lighter;
+}
