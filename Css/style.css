@@ -167,3 +167,92 @@ main>aside:nth-child(4)>h2>span {
     font-size: 4em;
     font-weight: lighter;
 }
+
+/* responsiveness for mobile view at less than 480px*/
+
+@media only screen and (max-width: 480px){
+    header{
+        display: flex;
+        flex-direction: column;
+        height: 2em;
+    }
+    header>p{
+        font-size: 0.7em;
+        position: absolute;
+        top: 19px;
+    }
+    header>h1{
+        font-size: 1.2em;
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #container > main{
+        display: flex;
+        flex-direction: column;           
+    }
+    /* mobile view first article  */
+    #container>main>article:nth-child(1) {
+        order: 3;
+        padding-top: 0;
+    }
+    #container>main>article:nth-child(1)>h2 {
+        font-size: 1.3em;
+        margin: none;
+    }
+    #container>main>article:nth-child(1)>p{
+        font-size: 0.9em;
+    }
+    #container>main>article:nth-child(1)>figure>img{
+        height: 300px;
+        width: 200px;
+        margin-left: -25px;
+    }
+    /* mobile view second article */
+    #container>main>article:nth-child(2) {
+        order: 4;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    #container>main>article:nth-child(2)>h2 {
+        font-size: 2em;
+        letter-spacing: 0;
+    }
+    #container>main>article:nth-child(2)>p{
+        font-size: 0.9em;
+    }
+    /* mobile view first aside  */
+    #container>main>aside:nth-child(3){
+        order: 1;
+        margin-top: 0;
+        padding-top: 0;
+        border: none;
+    }
+    #container>main>aside:nth-child(3)>p{
+        font-size: 1em;
+    }
+    /* mobile view second aside */
+    #container>main>aside:nth-child(4){
+        order: 2;
+        margin-top: 0;
+    }
+    #container>main>aside:nth-child(4)>h2{
+        font-size: 1.3em;
+    }
+    #container>main>aside:nth-child(4)>h2>span{
+        font-size: 3em;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+    #container>main>aside:nth-child(4)>p{
+        font-size: 0.9em;
+    }
+    /* footer mobile view  */
+    #container>footer>p{
+        font-size: 0.9em;
+    }
+}
